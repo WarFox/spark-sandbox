@@ -30,3 +30,18 @@ testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
 
 // Add the JAR file naming conventions described here: https://github.com/MrPowers/spark-style-guide#jar-files
 // You can add the JAR file naming conventions by running the shell script
+
+initialCommands in console := s"""
+import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession.builder()
+  .master("local[*]")
+  .appName("shell")
+  .config("fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider")
+  .getOrCreate()
+
+// use default provider credential chain "com.amazonaws.auth.DefaultAWSCredentialsProviderChain")
+
+val sc = spark.sparkContext
+val sqlContext = spark.sqlContext
+"""

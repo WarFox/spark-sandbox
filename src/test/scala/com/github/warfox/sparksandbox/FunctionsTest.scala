@@ -1,13 +1,13 @@
 package com.github.warfox.sparksandbox
 
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 import org.apache.spark.sql.functions._
 import com.github.mrpowers.spark.fast.tests.ColumnComparer
 import org.apache.spark.sql.types.{StructField, StructType, StringType}
 import org.apache.spark.sql.Row
 
 class FunctionsSpec
-    extends FunSpec
+    extends AnyFunSpec
     with SparkSessionTestWrapper
     with ColumnComparer {
 
@@ -34,4 +34,3 @@ class FunctionsSpec
   }
 
 }
-

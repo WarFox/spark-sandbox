@@ -1,1 +1,3 @@
 logLevel := Level.Warn
+
+addDependencyTreePlugin

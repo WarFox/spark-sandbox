@@ -1,3 +1,13 @@
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+
 target/
 lib_managed/
 src_managed/
@@ -14,3 +24,8 @@ project/boot/
 
 /metastore_db/
 derby.log
+
+.metals/
+.bloop/
+.bsp
+project/**/metals.sbt
